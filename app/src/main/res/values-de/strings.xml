@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Skilder_de</string>
+    <string name="selectedlanguage">Deutsch</string>
+    <string name="language">Sprache</string>
+    <string name="help">Hilfe</string>
+
+</resources>
