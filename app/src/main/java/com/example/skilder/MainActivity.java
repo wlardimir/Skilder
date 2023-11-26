@@ -1,7 +1,6 @@
 package com.example.skilder;
 
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,10 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
-import java.util.Objects;
+
 
 public class MainActivity extends AppCompatActivity {
-
     private static final String SELECTED_LANGUAGE = "SelectedLanguage";
     private static final String LANGUAGE_ENGLISH = "en";
     private static final String LANGUAGE_GERMAN = "de";
@@ -32,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        updateLanguageMenuItemIcon(menu.findItem(R.id.language));
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
@@ -41,23 +45,29 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.language) {
             // Change the language when pressing the language change button
-            toggleLanguage(item);
-            return true;
+            toggleLanguage();
         }
 
         if (id == R.id.help) {
+            // TODO Platzhalter fuers Buttons
             Toast.makeText(this, "Create new Help", Toast.LENGTH_SHORT).show();
-            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
+    }
+
+    private String getCurrentLanguage() {
+        Configuration config = getResources().getConfiguration();
+        int defaultLanguageIndex = 0;
+        Locale defaultLocale = config.getLocales().get(defaultLanguageIndex);
+
+        return defaultLocale.getLanguage();
     }
 
     // Method for changing the language
-    private void toggleLanguage(MenuItem item) {
+    private void toggleLanguage() {
         // Determine which language is currently set
-        Configuration config = getResources().getConfiguration();
-        String currentLanguage = config.locale.getLanguage();
+        String currentLanguage = this.getCurrentLanguage();
 
         // Set new language
         String newLanguage = (currentLanguage.equals(LANGUAGE_ENGLISH)) ? LANGUAGE_GERMAN : LANGUAGE_ENGLISH;
@@ -65,52 +75,50 @@ public class MainActivity extends AppCompatActivity {
         // Change language
         setLocale(newLanguage);
 
-        // Update the icon of the button
-        updateLanguageMenuItemIcon(item, newLanguage);
+        // Recreate activity
+        recreate();
 
         // Update the title of the toolbar
-        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
+        // TODO code to remove
+        // Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
 
         // Save the selected language
         saveLanguage(newLanguage);
 
-        // Refresh the view to display the changes
-        updateViews();
+        // Update the icon of the button without recreating the activity
+        invalidateOptionsMenu();
     }
 
     // Method for setting the language and updating the configuration
     private void setLocale(String languageCode) {
         Locale locale = new Locale(languageCode);
-        Locale.setDefault(locale);
+        Configuration conf = new Configuration();
 
-        Configuration configuration = new Configuration();
-        configuration.setLocale(locale);
-
-        Resources resources = getResources();
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        conf.setLocale(locale);
+        this.getBaseContext().getResources().getConfiguration().setTo(conf);
     }
 
     // Method for updating the icon of the language change menu item
-    private void updateLanguageMenuItemIcon(MenuItem item, String languageCode) {
-        // Set the icon based on the language
-        boolean isIconUK = true;
-        if (languageCode.equals(LANGUAGE_ENGLISH)) {
-            item.setIcon(R.drawable.uk);
-            Toast.makeText(this, "Language set to English", Toast.LENGTH_SHORT).show();
-        } else {
-            isIconUK = false;
-            item.setIcon(R.drawable.ger);
-            Toast.makeText(this, "Sprache auf Deutsch gestellt", Toast.LENGTH_SHORT).show();
+    private void updateLanguageMenuItemIcon(MenuItem item) {
+        switch (this.getCurrentLanguage()) {
+            case LANGUAGE_ENGLISH:
+                item.setIcon(R.drawable.uk);
+                break;
+
+            case LANGUAGE_GERMAN:
+                item.setIcon(R.drawable.de);
+                break;
+
+            default:
+                // Other default languages will be turn to english
+                setLocale(LANGUAGE_ENGLISH);
+                item.setIcon(R.drawable.uk);
+                break;
         }
     }
 
     // Method for saving the selected language in the SharedPreferences
     private void saveLanguage(String languageCode) {
         getPreferences(MODE_PRIVATE).edit().putString(SELECTED_LANGUAGE, languageCode).apply();
-    }
-
-    // Method for updating the view after the language change
-    private void updateViews() {
-
     }
 }

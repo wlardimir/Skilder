@@ -6,7 +6,7 @@
         android:title="@string/language"
         android:id="@+id/language"
         android:icon="@drawable/uk"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:title="@string/help"

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Skilder_de</string>
-    <string name="selectedlanguage">Deutsch</string>
     <string name="language">Sprache</string>
     <string name="help">Hilfe</string>
+    <string name="instruction">Um die erforderliche Menge Farbe zu berechnen, geben Sie bitte die Werte in Metern ein.</string>
+    <string name="width">Breite</string>
+    <string name="height">Höhe</string>
+    <string name="ceilingHeight">Deckenhöhe</string>
+    <string name="result">Ergebnis</string>
+    <string name="icon">\@drawable/de</string>
 
 </resources>

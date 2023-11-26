@@ -1,9 +1,13 @@
 <resources>
 
     <string name="app_name">Skilder_en</string>
-    <string name="selectedlanguage">English</string>
     <string name="help">Help</string>
     <string name="language">Language</string>
-
+    <string name="instruction">To calculate the required amount of paint, please enter the values in meters.</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="ceilingHeight">Ceiling height</string>
+    <string name="result">Result</string>
+    <string name="icon">\@drawable/uk</string>
 
 </resources>
