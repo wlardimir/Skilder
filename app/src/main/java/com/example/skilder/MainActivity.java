@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Method for saving the selected language in the SharedPreferences
+    // Method for saving the selected language in the SharedPreferences TEST
     private void saveLanguage(String languageCode) {
         getPreferences(MODE_PRIVATE).edit().putString(SELECTED_LANGUAGE, languageCode).apply();
     }
