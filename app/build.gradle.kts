@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.skilder"
+    namespace = "com.main.skilder"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.skilder"
+        applicationId = "com.main.skilder"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

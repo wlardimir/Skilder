@@ -8,8 +8,6 @@
     <string name="height">Höhe</string>
     <string name="ceilingHeight">Deckenhöhe</string>
     <string name="result">Ergebnis</string>
-    <string name="icon">\@drawable/de</string>
-    <string name="help_test" >HILFE TEST</string>
     <string name="back">Zurück</string>
     <string name="help_desk" >Auskunftsstelle</string>
     <string name="Call" >Anruf: tel:+123456789</string>
