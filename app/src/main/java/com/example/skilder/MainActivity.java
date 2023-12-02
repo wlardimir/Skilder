@@ -1,17 +1,16 @@
 package com.example.skilder;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
-
 
 public class MainActivity extends AppCompatActivity {
     private static final String SELECTED_LANGUAGE = "SelectedLanguage";
@@ -49,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.help) {
-            // TODO Platzhalter fuers Buttons
-            Toast.makeText(this, "Create new Help", Toast.LENGTH_SHORT).show();
+            startNewActivity();
         }
 
         return true;
@@ -77,10 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Recreate activity
         recreate();
-
-        // Update the title of the toolbar
-        // TODO code to remove
-        // Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
 
         // Save the selected language
         saveLanguage(newLanguage);
@@ -120,5 +114,11 @@ public class MainActivity extends AppCompatActivity {
     // Method for saving the selected language in the SharedPreferences
     private void saveLanguage(String languageCode) {
         getPreferences(MODE_PRIVATE).edit().putString(SELECTED_LANGUAGE, languageCode).apply();
+    }
+
+    // Start New Activity
+    private void startNewActivity() {
+        Intent helpActivityIntent = new Intent(this, HelpActivity.class);
+        startActivity(helpActivityIntent);
     }
 }

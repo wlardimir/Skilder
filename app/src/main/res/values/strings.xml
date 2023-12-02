@@ -9,5 +9,10 @@
     <string name="ceilingHeight">Ceiling height</string>
     <string name="result">Result</string>
     <string name="icon">\@drawable/uk</string>
+    <string name="help_test" >HELP TEST</string>
+    <string name="back">Back</string>
+    <string name="help_desk" >Help Desk</string>
+    <string name="Call" >Call: tel:+123456789</string>
+    <string name="Email" >E-Mail to: info@Skilder.de</string>
 
 </resources>
