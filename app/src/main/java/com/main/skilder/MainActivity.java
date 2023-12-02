@@ -1,4 +1,4 @@
-package com.example.skilder;
+package com.main.skilder;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -10,13 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.enums.Language;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String SELECTED_LANGUAGE = "SelectedLanguage";
-    private static final String LANGUAGE_ENGLISH = "en";
-    private static final String LANGUAGE_GERMAN = "de";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,21 +52,28 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private String getCurrentLanguage() {
+    private Language getCurrentLanguage() {
         Configuration config = getResources().getConfiguration();
         int defaultLanguageIndex = 0;
         Locale defaultLocale = config.getLocales().get(defaultLanguageIndex);
+        String localeCurrentLanguage = defaultLocale.getLanguage();
+        Language currentLanguage = Language.ENGLISH;
 
-        return defaultLocale.getLanguage();
+        for(Language language : Language.values()) {
+            if (language.getLanguageCode().equalsIgnoreCase(localeCurrentLanguage)) {
+                currentLanguage = language;
+                break;
+            }
+        }
+
+        return currentLanguage;
     }
 
     // Method for changing the language
     private void toggleLanguage() {
-        // Determine which language is currently set
-        String currentLanguage = this.getCurrentLanguage();
-
-        // Set new language
-        String newLanguage = (currentLanguage.equals(LANGUAGE_ENGLISH)) ? LANGUAGE_GERMAN : LANGUAGE_ENGLISH;
+        Language currentLanguage = this.getCurrentLanguage();
+        int nextLanguageIndex = (currentLanguage.ordinal()+1) % Language.values().length;
+        Language newLanguage = Language.values()[nextLanguageIndex];
 
         // Change language
         setLocale(newLanguage);
@@ -84,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Method for setting the language and updating the configuration
-    private void setLocale(String languageCode) {
-        Locale locale = new Locale(languageCode);
+    private void setLocale(Language language) {
+        Locale locale = new Locale(language.getLanguageCode());
         Configuration conf = new Configuration();
 
         conf.setLocale(locale);
@@ -94,26 +99,29 @@ public class MainActivity extends AppCompatActivity {
 
     // Method for updating the icon of the language change menu item
     private void updateLanguageMenuItemIcon(MenuItem item) {
-        switch (this.getCurrentLanguage()) {
-            case LANGUAGE_ENGLISH:
+         switch (this.getCurrentLanguage()) {
+            case ENGLISH:
                 item.setIcon(R.drawable.uk);
                 break;
 
-            case LANGUAGE_GERMAN:
+            case GERMAN:
                 item.setIcon(R.drawable.de);
                 break;
 
             default:
                 // Other default languages will be turn to english
-                setLocale(LANGUAGE_ENGLISH);
+                setLocale(Language.ENGLISH);
                 item.setIcon(R.drawable.uk);
                 break;
         }
     }
 
     // Method for saving the selected language in the SharedPreferences
-    private void saveLanguage(String languageCode) {
-        getPreferences(MODE_PRIVATE).edit().putString(SELECTED_LANGUAGE, languageCode).apply();
+    private void saveLanguage(Language language) {
+        getPreferences(MODE_PRIVATE).edit().putString(
+                "SelectedLanguage",
+                language.getLanguageCode()
+        ).apply();
     }
 
     // Start New Activity

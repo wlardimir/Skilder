@@ -1,4 +1,4 @@
-package com.example.skilder;
+package com.main.skilder;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
