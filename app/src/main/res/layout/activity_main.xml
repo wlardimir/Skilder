@@ -30,11 +30,11 @@
 
     <EditText
         android:id="@+id/width"
-        android:layout_width="128dp"
-        android:layout_height="48dp"
+        android:layout_width="196dp"
+        android:layout_height="43dp"
         android:layout_marginTop="84dp"
         android:hint="@string/width"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,11 +43,11 @@
 
     <EditText
         android:id="@+id/height"
-        android:layout_width="128dp"
-        android:layout_height="48dp"
+        android:layout_width="196dp"
+        android:layout_height="43dp"
         android:layout_marginTop="148dp"
         android:hint="@string/height"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,26 +56,50 @@
 
     <EditText
         android:id="@+id/ceilingHeight"
-        android:layout_width="128dp"
-        android:layout_height="48dp"
+        android:layout_width="196dp"
+        android:layout_height="43dp"
         android:layout_marginTop="208dp"
+        android:autofillHints="no"
         android:hint="@string/ceilingHeight"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:autofillHints="no" />
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="79dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="284dp"
-        android:text="@string/result"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="167dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="280dp"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="275dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="368dp"
+        android:text="@string/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/colorNeeded"
+        android:layout_width="273dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="412dp"
+        android:text="@string/colorNeeded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

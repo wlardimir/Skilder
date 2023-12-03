@@ -6,11 +6,14 @@
     <string name="instruction">To calculate the required amount of paint, please enter the values in meters.</string>
     <string name="width">Width</string>
     <string name="height">Height</string>
-    <string name="ceilingHeight">Ceiling height</string>
+    <string name="ceilingHeight">Optional: Ceiling height</string>
     <string name="result">Result</string>
     <string name="back">Back</string>
     <string name="help_desk" >Help Desk</string>
-    <string name="Call" >Call: tel:+123456789</string>
-    <string name="Email" >E-Mail to: info@Skilder.de</string>
+    <string name="call" >Call: tel:+123456789</string>
+    <string name="email" >E-Mail to: info@Skilder.de</string>
+    <string name="calculate" >Calculate</string>
+    <string name="colorNeeded" >Color needed</string>
+    <string name="areaBig" >Surface too large</string>
 
 </resources>
