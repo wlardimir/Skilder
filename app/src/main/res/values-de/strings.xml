@@ -6,11 +6,14 @@
     <string name="instruction">Um die erforderliche Menge Farbe zu berechnen, geben Sie bitte die Werte in Metern ein.</string>
     <string name="width">Breite</string>
     <string name="height">Höhe</string>
-    <string name="ceilingHeight">Deckenhöhe</string>
+    <string name="ceilingHeight">Optional: Deckenhöhe</string>
     <string name="result">Ergebnis</string>
     <string name="back">Zurück</string>
     <string name="help_desk" >Auskunftsstelle</string>
-    <string name="Call" >Anruf: tel:+123456789</string>
-    <string name="Email" >E-Mail an: info@Skilder.de</string>
+    <string name="call" >Anruf: tel:+123456789</string>
+    <string name="email" >E-Mail an: info@Skilder.de</string>
+    <string name="calculate" >Berechnen</string>
+    <string name="colorNeeded" >Benötigte Farbe</string>
+    <string name="areaBig" >Fläche zu groß</string>
 
 </resources>
