@@ -11,7 +11,7 @@
     <item
         android:title="@string/help"
         android:id="@+id/help"
-        android:icon="@drawable/help_center"
+        android:icon="@drawable/customer_support"
         app:showAsAction="ifRoom"/>
 
 </menu>

@@ -21,58 +21,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instruction"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <EditText
         android:id="@+id/width"
-        android:layout_width="196dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="236dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="92dp"
+        android:autofillHints="no"
+        android:background="@drawable/edittext_border"
         android:hint="@string/width"
+        android:gravity="center_vertical|center_horizontal"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/height"
-        android:layout_width="196dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="236dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="164dp"
+        android:autofillHints="no"
+        android:background="@drawable/edittext_border"
         android:hint="@string/height"
+        android:gravity="center_vertical|center_horizontal"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:autofillHints="no" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/ceilingHeight"
-        android:layout_width="196dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="208dp"
+        android:layout_width="236dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="248dp"
         android:autofillHints="no"
+        android:background="@drawable/edittext_border"
         android:hint="@string/ceilingHeight"
+        android:gravity="center_vertical|center_horizontal"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/calculate"
-        android:layout_width="167dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="280dp"
+        android:layout_width="236dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="328dp"
         android:text="@string/calculate"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -80,26 +89,29 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="275dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="368dp"
+        android:layout_width="267dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="424dp"
         android:text="@string/result"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/colorNeeded"
-        android:layout_width="273dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="412dp"
+        android:layout_width="268dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="472dp"
         android:text="@string/colorNeeded"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.776"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

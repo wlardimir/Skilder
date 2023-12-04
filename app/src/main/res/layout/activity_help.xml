@@ -16,14 +16,30 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:id="@+id/TestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help_Info"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarHelp"
+        app:layout_constraintVertical_bias="0.043" />
+
     <Button
         android:id="@+id/callButton"
         android:layout_width="415dp"
         android:layout_height="91dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="196dp"
         android:text="@string/call"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarHelp"
         tools:ignore="MissingConstraints" />
@@ -32,10 +48,12 @@
         android:id="@+id/emailButton"
         android:layout_width="415dp"
         android:layout_height="91dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="324dp"
         android:text="@string/email"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarHelp"
         tools:ignore="MissingConstraints" />
