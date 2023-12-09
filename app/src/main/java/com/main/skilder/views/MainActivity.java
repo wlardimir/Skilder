@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText heightEditText;
     private EditText ceilingHeightEditText;
     private Button calculateButton;
-    private MainController mainController = new MainController(this);
+    private final MainController mainController = new MainController(this);
     private TextView resultTextView;
 
     @Override
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showResultColorLiter(float squareMeters, float colorLiter) {
-        // TODO discoverz why toString() is needed
+        // TODO discovery why toString() is needed
         String textTemplate = getString(R.string.result);
         String outputText = String.format(textTemplate, colorLiter, squareMeters);
 
@@ -215,10 +215,6 @@ public class MainActivity extends AppCompatActivity {
 
     public MainController getMainController() {
         return mainController;
-    }
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
     }
 
     public TextView getResultTextView() {
