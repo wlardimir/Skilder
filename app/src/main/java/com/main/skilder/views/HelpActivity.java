@@ -1,4 +1,4 @@
-package com.main.skilder;
+package com.main.skilder.views;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.main.skilder.R;
 
 public class HelpActivity extends AppCompatActivity {
 

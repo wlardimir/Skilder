@@ -7,14 +7,14 @@
     <string name="width">Width</string>
     <string name="height">Height</string>
     <string name="ceilingHeight">Optional: Ceiling height</string>
-    <string name="result">Result</string>
+    <string name="result">Color needed: %.2f liter for %.2fm².</string>
     <string name="back">Back</string>
     <string name="help_desk" >Help Desk</string>
     <string name="call" >Call: tel:+123456789</string>
     <string name="email" >E-Mail to: info@Skilder.de</string>
     <string name="calculate" >Calculate</string>
-    <string name="colorNeeded" >Color needed</string>
     <string name="areaBig" >Surface too large</string>
     <string name="help_Info" >Support Options: Our hotline is available on weekdays from 08:00 to 16:00, ensuring a response within 1 hour. Alternatively, you can contact us via email.</string>
+    <string name="resultErrorFields">Width and Height should not be empty and ceiling height need to be above 0</string>
 
 </resources>

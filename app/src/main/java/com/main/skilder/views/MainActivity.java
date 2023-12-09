@@ -1,6 +1,5 @@
-package com.main.skilder;
+package com.main.skilder.views;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,14 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.enums.Language;
+import com.main.skilder.R;
+import com.main.skilder.controllers.MainController;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText widthEditText, heightEditText, ceilingHeightEditText;
-    private TextView resultTextView,colorNeededTextView;
+    private EditText widthEditText;
+    private EditText heightEditText;
+    private EditText ceilingHeightEditText;
+    private Button calculateButton;
+    private MainController mainController = new MainController(this);
+    private TextView resultTextView;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,54 +33,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        widthEditText = findViewById(R.id.width);
-        heightEditText = findViewById(R.id.height);
-        ceilingHeightEditText = findViewById(R.id.ceilingHeight);
-        resultTextView = findViewById(R.id.result);
-        colorNeededTextView = findViewById(R.id.colorNeeded);
-        Button calculateButton = findViewById(R.id.calculate);
+        this.setWidthEditText(findViewById(R.id.width));
+        this.setHeightEditText(findViewById(R.id.height));
+        this.setCeilingHeightEditText(findViewById(R.id.ceilingHeight));
+        this.setCalculateButton(findViewById(R.id.calculate));
+        this.setResultTextView(findViewById(R.id.result));
 
-        calculateButton.setOnClickListener(v -> {
-            try {
-                // Read the entries from the fields
-                double width = Double.parseDouble(widthEditText.getText().toString());
-                double height = Double.parseDouble(heightEditText.getText().toString());
-
-                // Check if ceilingHeightEditText is empty
-                String ceilingHeightText = ceilingHeightEditText.getText().toString();
-                double ceilingHeight = ceilingHeightText.isEmpty() ? 1.0 : Double.parseDouble(ceilingHeightText);
-
-                // Use the Calculator class for the calculation
-                double result = Calculator.calculateColorArea(width, height, ceilingHeight);
-                double resultColorNeeded = Calculator.calculateColorNeeded(result);
-
-                // Show the result
-                resultTextView.setText(getString(R.string.result) + ": " + String.format(Locale.US, "%.2f", result) + " m²");
-
-                if(resultColorNeeded == 0){
-                    colorNeededTextView.setText(R.string.areaBig);
-                } else {
-                    colorNeededTextView.setText(getString(R.string.colorNeeded) + ": " + String.format(Locale.US, resultColorNeeded + " Liter"));
-                }
-
-            } catch (NumberFormatException e) {
-                // Handle the case where the input cannot be converted to a number
-                resultTextView.setText("Invalid input");
-                colorNeededTextView.setText("Invalid input");
-            }
-        });
+        this.getCalculateButton().setOnClickListener(view -> this.getMainController().executeCalculation());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         updateLanguageMenuItemIcon(menu.findItem(R.id.language));
-        return true;
-    }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        return super.onPrepareOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -171,5 +142,90 @@ public class MainActivity extends AppCompatActivity {
     private void startNewActivity() {
         Intent helpActivityIntent = new Intent(this, HelpActivity.class);
         startActivity(helpActivityIntent);
+    }
+
+    public boolean isWidthEditTextEmpty() {
+        return this.getWidthEditText().getText().toString().length() == 0;
+    }
+    public boolean isHeightEditTextEmpty() {
+        return this.getHeightEditText().getText().toString().length() == 0;
+    }
+    public boolean isCeilingHeightEditTextEmpty() {
+        return this.getCeilingHeightEditText().getText().toString().length() == 0;
+    }
+
+    public void showResultColorLiter(float squareMeters, float colorLiter) {
+        // TODO discoverz why toString() is needed
+        String textTemplate = getString(R.string.result);
+        String outputText = String.format(textTemplate, colorLiter, squareMeters);
+
+        this.getResultTextView().setText(outputText);
+    }
+    public void showResultEmptyFields() {
+        this.getResultTextView().setText(getString(R.string.resultErrorFields));
+    }
+    public float getWidth() {
+        String widthEditText = this.getWidthEditText().getText().toString();
+
+        return Float.parseFloat(widthEditText);
+    }
+    public float getHeight() {
+        String heightEditText = this.getHeightEditText().getText().toString();
+
+        return Float.parseFloat(heightEditText);
+    }
+
+    public float getCeilingHeight() {
+        String ceilingHeightEditText = this.getCeilingHeightEditText().getText().toString();
+
+        return Float.parseFloat(ceilingHeightEditText);
+    }
+
+    public EditText getWidthEditText() {
+        return widthEditText;
+    }
+
+    public void setWidthEditText(EditText widthEditText) {
+        this.widthEditText = widthEditText;
+    }
+
+    public EditText getHeightEditText() {
+        return heightEditText;
+    }
+
+    public void setHeightEditText(EditText heightEditText) {
+        this.heightEditText = heightEditText;
+    }
+
+    public EditText getCeilingHeightEditText() {
+        return ceilingHeightEditText;
+    }
+
+    public void setCeilingHeightEditText(EditText ceilingHeightEditText) {
+        this.ceilingHeightEditText = ceilingHeightEditText;
+    }
+
+    public Button getCalculateButton() {
+        return calculateButton;
+    }
+
+    public void setCalculateButton(Button calculateButton) {
+        this.calculateButton = calculateButton;
+    }
+
+    public MainController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
+    public TextView getResultTextView() {
+        return resultTextView;
+    }
+
+    public void setResultTextView(TextView resultTextView) {
+        this.resultTextView = resultTextView;
     }
 }

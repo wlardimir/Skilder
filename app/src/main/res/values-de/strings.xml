@@ -7,14 +7,14 @@
     <string name="width">Breite</string>
     <string name="height">Höhe</string>
     <string name="ceilingHeight">Optional: Deckenhöhe</string>
-    <string name="result">Ergebnis</string>
+    <string name="result">Benötigte Farbe: %.2f Liter für %.2fm².</string>
     <string name="back">Zurück</string>
     <string name="help_desk" >Auskunftsstelle</string>
     <string name="call" >Anruf: tel:+123456789</string>
     <string name="email" >E-Mail an: info@Skilder.de</string>
     <string name="calculate" >Berechnen</string>
-    <string name="colorNeeded" >Benötigte Farbe</string>
     <string name="areaBig" >Fläche zu groß</string>
     <string name="help_Info" >Supportmöglichkeit: Unsere Hotline steht Ihnen werktags von 08:00 bis 16:00 Uhr zur Verfügung und garantiert eine Rückmeldung innerhalb von 1 Stunde. Alternativ können Sie uns auch per E-Mail kontaktieren.</string>
+    <string name="resultErrorFields">Breite und Hoehe duerfen nicht Null sein sowie die Deckenhoehe muss ueber Null sein!</string>
 
 </resources>
