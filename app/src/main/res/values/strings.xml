@@ -1,20 +1,21 @@
 <resources>
-
-    <string name="app_name">Skilder_en</string>
     <string name="help">Help</string>
     <string name="language">Language</string>
     <string name="instruction">Enter dimensions in meters for paint calculation</string>
     <string name="width">Width</string>
     <string name="height">Height</string>
     <string name="ceilingHeight">Optional: Ceiling height</string>
-    <string name="result">Result</string>
+    <string name="result">Color needed: %.2f liter for %.2fm².</string>
     <string name="back">Back</string>
     <string name="help_desk" >Help Desk</string>
     <string name="call" >Call: tel:+123456789</string>
-    <string name="email" >E-Mail to: info@Skilder.de</string>
+    <string name="email">E-Mail to: info@Skilder.de</string>
     <string name="calculate" >Calculate</string>
-    <string name="colorNeeded" >Color needed</string>
-    <string name="areaBig" >Surface too large</string>
+    <string name="areaBig">Surface too large</string>
     <string name="help_Info" >Support Options: Our hotline is available on weekdays from 08:00 to 16:00, ensuring a response within 1 hour. Alternatively, you can contact us via email.</string>
-
+    <string name="resultErrorFields">Width and height must not be zero.</string>
+    <string name="impressum" >Imprint of K.P.v.IT GbR \nAuthorized Representatives: [First Name Last Name] \nLocation: [Street, Postal Code] Gummersbach \nContact: Phone: [Phone Number] \nEmail: [Email Address]</string>
+    <string name="DeleteCal">"DeleteCal"</string>
+    <string name="app_name">Farbrechner</string>
+    <string name="resultEmptyCeilingHeight">Ceiling height must be above 0 meters</string>
 </resources>

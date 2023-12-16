@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Skilder"
         tools:targetApi="31">
         <activity
-            android:name="com.main.skilder.HelpActivity"
+            android:name="com.main.skilder.views.HelpActivity"
             android:exported="false" />
         <activity
-            android:name="com.main.skilder.MainActivity"
+            android:name="com.main.skilder.views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

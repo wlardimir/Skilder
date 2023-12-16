@@ -1,4 +1,4 @@
-package com.main.skilder;
+package com.main.skilder.views;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,8 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class HelpActivity extends AppCompatActivity {
+import com.main.skilder.R;
 
+public class HelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +32,12 @@ public class HelpActivity extends AppCompatActivity {
 
         emailButton.setOnClickListener(v -> sendEmail());
     }
-
     // Options for returning to the main screen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_help, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -50,19 +49,18 @@ public class HelpActivity extends AppCompatActivity {
 
         return true;
     }
-
     // Method for starting a call
     private void makePhoneCall() {
         Intent dialIntent = new Intent(Intent.ACTION_DIAL);
         dialIntent.setData(Uri.parse("tel:+123456789"));
         startActivity(dialIntent);
     }
-
     // Method for starting the e-mail client
     @SuppressLint("QueryPermissionsNeeded")
     private void sendEmail() {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
+        // TODO Marc outsourcing in translation
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@skilder.de"});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Betreff");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Nachrichtentext");
