@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Skilder_de</string>
     <string name="language">Sprache</string>
     <string name="help">Hilfe</string>
     <string name="instruction">Geben Sie die Maße in Metern für die Farbberechnung ein</string>
@@ -15,6 +14,9 @@
     <string name="calculate" >Berechnen</string>
     <string name="areaBig" >Fläche zu groß</string>
     <string name="help_Info" >Supportmöglichkeit: Unsere Hotline steht Ihnen werktags von 08:00 bis 16:00 Uhr zur Verfügung und garantiert eine Rückmeldung innerhalb von 1 Stunde. Alternativ können Sie uns auch per E-Mail kontaktieren.</string>
-    <string name="resultErrorFields">Breite und Hoehe duerfen nicht Null sein sowie die Deckenhoehe muss ueber Null sein!</string>
-
+    <string name="resultErrorFields">Breite und Höhe muessen einen Wert haben!</string>
+    <string name="impressum" >Impressum der K.P.v.IT GbR \nVertretungsberechtigt: [Vorname Nachname] \nSitz: [Straße, PLZ] Gummersbach \nKontakt: Tel: [Telefonnummer] \nE-Mail: [E-Mail-Adresse]</string>
+    <string name="DeleteCal">"DeleteCal"</string>
+    <string name="app_name">Farbrechner</string>
+    <string name="resultEmptyCeilingHeight">Deckenhoehe muss ueber 0 Meter sein</string>
 </resources>

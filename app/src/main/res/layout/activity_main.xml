@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        app:title="@string/app_name"
+        app:title=" "
         app:titleMarginStart="30dp"
         android:background="@color/lavender"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -89,16 +89,52 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="267dp"
-        android:layout_height="48dp"
+        android:layout_width="277dp"
+        android:layout_height="166dp"
         android:layout_marginTop="424dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <ImageView
+        android:id="@+id/widthIcon"
+        android:layout_width="53dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/width"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/heightIcon"
+        android:layout_width="53dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="172dp"
+        android:src="@drawable/height"
+        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/cellingHeightIcon"
+        android:layout_width="53dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="252dp"
+        android:src="@drawable/heightc"
+        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:importantForAccessibility="no" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
