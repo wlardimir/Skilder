@@ -1,5 +1,6 @@
 package com.main.skilder.controllers;
 
+import android.widget.EditText;
 import com.main.skilder.models.Surface;
 import com.main.skilder.views.MainActivity;
 
@@ -54,8 +55,24 @@ public class MainController {
             calculate();
         }
     }
+    public void clearCalculation() {
+        MainActivity currentMainActivity = this.getMainActivity();
+
+        EditText editTextWidth = currentMainActivity.getWidthEditText();
+        EditText editTextHeight = currentMainActivity.getHeightEditText();
+        EditText editTextCeilingHeight = currentMainActivity.getCeilingHeightEditText();
+
+        editTextWidth.setText("");
+        editTextHeight.setText("");
+        editTextCeilingHeight.setText("");
+
+        Surface currentSurface = new Surface();
+        currentSurface.setWidth(0.0f);
+        currentSurface.setHeight(0.0f);
+        currentSurface.setCeilingHeight(0.0f);
+    }
+
     public MainController(MainActivity mainActivity) { this.setMainActivity(mainActivity); }
     public MainActivity getMainActivity() { return mainActivity; }
     public void setMainActivity(MainActivity mainActivity) { this.mainActivity = mainActivity; }
-
 }

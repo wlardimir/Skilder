@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem helpButton;
     private final MainController mainController = new MainController(this);
     private TextView resultTextView;
+    private ImageButton calculationDelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
         this.setCeilingHeightEditText(findViewById(R.id.ceilingHeight));
         this.setCalculateButton(findViewById(R.id.calculate));
         this.setResultTextView(findViewById(R.id.result));
+        this.setCalculationDelete(findViewById(R.id.calDelete));
 
         this.getCalculateButton().setOnClickListener(view -> this.getMainController().executeCalculation());
+        this.getCalculationDelete().setOnClickListener(view -> this.getMainController().clearCalculation());
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
@@ -152,10 +158,10 @@ public class MainActivity extends AppCompatActivity {
         this.getResultTextView().setText(outputText);
     }
     public void showResultEmptyFields() {
-        this.getResultTextView().setText(getString(R.string.resultErrorFields));
+        this.getResultTextView().setText(getString(R.string.result_error_fields));
     }
     public void showResultCeilingHeightIsNull() {
-        this.getResultTextView().setText(getString(R.string.resultEmptyCeilingHeight));
+        this.getResultTextView().setText(getString(R.string.result_empty_ceiling_height));
     }
     public float getWidth() {
         String widthEditText = this.getWidthEditText().getText().toString();
@@ -196,4 +202,6 @@ public class MainActivity extends AppCompatActivity {
     public MenuItem getLanguageButton() { return languageButton; }
     public void setHelpButton(MenuItem helpButton) { this.helpButton = helpButton; }
     public MenuItem getHelpButton() { return helpButton; }
+    public ImageButton getCalculationDelete() { return calculationDelete; }
+    public void setCalculationDelete(ImageButton calculationDelete) { this.calculationDelete = calculationDelete; }
 }
